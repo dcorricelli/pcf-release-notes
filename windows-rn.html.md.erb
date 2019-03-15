@@ -13,6 +13,37 @@ or later.
 
 ## <a id='releases'></a> Releases
 
+### <a id='2.5.0'></a> 2.5.0
+
+* **[Feature Improvement]** Add support for "windows" stack
+* Bump windows1803 stemcell to version **`1803.6`**
+* Bump diego to version **`2.27.0`**
+* Bump garden-runc to version **`1.18.0`**
+* Bump hwc-offline-buildpack to version **`3.1.4`**
+* Bump windowsfs-release to version **`2.0.0`**
+
+<table border="1" class="nice">
+  <thead>
+    <tr>
+      <th>Component</th>
+      <th>Version</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr><td>windows1803 stemcell</td><td>1803.6</td></tr>
+    <tr><td>cf-windows-smoke-tests</td><td>40.0.40</td></tr>
+    <tr><td>diego</td><td>2.27.0</td></tr>
+    <tr><td>event-log</td><td>0.7.0</td></tr>
+    <tr><td>garden-runc</td><td>1.18.0</td></tr>
+    <tr><td>hwc-offline-buildpack</td><td>3.1.4</td></tr>
+    <tr><td>loggregator-agent</td><td>2.2</td></tr>
+    <tr><td>loggregator</td><td>103.3</td></tr>
+    <tr><td>winc</td><td>1.7.0</td></tr>
+    <tr><td>windows-utilities</td><td>0.11.0</td></tr>
+    <tr><td>windowsfs-release</td><td>2.0.0</td></tr>
+  </tbody>
+</table>
+
 ### <a id='2.5.0-beta.1'></a> 2.5.0-beta.1
 
 * **[Feature Improvement]** Add support for "windows" stack
@@ -187,6 +218,25 @@ PAS for Windows includes them in the system trust store of Windows containers.
 
 For instructions on configuring trusted certificates in the BOSH Director tile,
 see [Setting Trusted Certificates](https://docs.pivotal.io//pivotalcf/2-5/customizing/trusted-certificates.html).
+
+## <a id='multi-buildpacks'></a> Windows Binary Buildpack multi-buildpacks capabilities
+Push any Windows executable to a Windows cell.
+
+## <a id='stemcell-auto'></a> vSphere Stemcell Automation v2
+Simplified stemcell creation control plane. Now all the stemcell-build steps are automated after Windows Updates.
+
+## <a id='smb-service'></a> SMB Service
+Developers can use Steeltoe and “net use” to mount an SMB network volume from a container.
+
+## <a id='smb-service'></a> Windows Stemcells in Microsoft Azure Stack
+Windows Stemcells in Microsoft Azure Stack (MAS) enable .NET apps to be hosted on Microsoft’s hybrid cloud environment.
+
+## <a id='questions'></a> Questions for Kartik
+* “One Tile” Deployment Experience - Consolidation of Windows cell deployments into PAS, the Isolation Segment tile, and PKS.
+* PAS for Windows compatibility with PKS-deployed Kubernetes clusters. (beta)
+* Improved route integrity - Secure communication from GoRouter to container.
+* Automated service discovery and secured connection to all hosted apps and services.
+* Retirement of PASW 2012R2
 
 ## <a id='adv-features'></a> New Advanced Features
 
