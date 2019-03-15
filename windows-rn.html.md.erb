@@ -200,14 +200,14 @@ PAS for Windows v2.5 includes the following major features:
 
 ###<a id="windows-2019"></a> Support for Windows Server 2019 Container Images
 
-PASW v2.5 supports Windows Server 2019 container images, which means 
-developers can deploy .NET apps on Windows Server 2019 in PCF.
+PAS for Windows v2.5 supports Windows Server 2019 container images. This means developers can deploy .NET apps on Windows Server 2019 in PCF.
 
-Windows Server 2019 stabilizes and enhances a number of container APIs 
-used in the Garden Windows implementation (winc) of PASW.
+Moving to Windows Server 2019 adds stability and enhances a number of container APIs used in the Garden Windows implementation (`winc`) of PAS for Windows.
 
-Windows Server 2019 stemcells are available on Pivotal Network and bosh.io 
+Windows Server 2019 stemcells are available on [Pivotal Network](https://network.pivotal.io/) and [bosh.io](https://www.bosh.io/) 
 for all IaaS targets except vSphere.
+
+  <p class="note"><strong>Note</strong>: PAS for Windows v2.5 no longer supports Windows Server 1803 stemcells. If you require a Windows Server 1803 stemcell, use PAS for Windows v2.4 instead.</p>
 
 ### <a id='trusted-certificates'></a> .NET Apps Trust CA Certificates Configured in BOSH Director
 
@@ -217,7 +217,7 @@ To enable .NET apps to trust these CA certificates,
 PAS for Windows includes them in the system trust store of Windows containers.
 
 For instructions on configuring trusted certificates in the BOSH Director tile,
-see [Setting Trusted Certificates](https://docs.pivotal.io//pivotalcf/2-5/customizing/trusted-certificates.html).
+see [Setting Trusted Certificates](../../../pivotalcf/customizing/trusted-certificates.html).
 
 ## <a id='multi-buildpacks'></a> Windows Binary Buildpack multi-buildpacks capabilities
 Push any Windows executable to a Windows cell.
@@ -225,10 +225,17 @@ Push any Windows executable to a Windows cell.
 ## <a id='stemcell-auto'></a> vSphere Stemcell Automation v2
 Simplified stemcell creation control plane. Now all the stemcell-build steps are automated after Windows Updates.
 
-## <a id='smb-service'></a> SMB Service
-Developers can use Steeltoe and “net use” to mount an SMB network volume from a container.
+### <a id='smb'></a> SMB Support for Windows Containers
 
-## <a id='smb-service'></a> Windows Stemcells in Microsoft Azure Stack
+Server Message Block (SMB) mounting allows developers to bind existing SMB shares to their containerized apps. 
+Previously, SMB shares were only accessible by using the SharpCIFS library. PASW v2.5.0 natively supports SMB mounting.
+
+This enables usage of the `net use` command. This is currently limited to IP address-based UNC paths.
+
+For more information, see [Using SMB Volumes in .NET Apps](../../../pivotalcf/windows/smb-volumes-apps.html) or [SMB (WINDOWS) FILE SHARES](https://dotnet-cookbook.cfapps.io/3rdparty/smb_file_shares/) in the _.NET on Pivotal Cloud Foundry_ cookbook.
+
+
+## <a id='mas'></a> Windows Stemcells in Microsoft Azure Stack
 Windows Stemcells in Microsoft Azure Stack (MAS) enable .NET apps to be hosted on Microsoft’s hybrid cloud environment.
 
 ## <a id='questions'></a> Questions for Kartik
